@@ -39,3 +39,9 @@ bool Property::getOwnershipStatus()
     return ownership_status;
 }
 
+//Run function
+// void Property::run()
+// {
+//     std::cout << "You've landed on " << name << "." << std::endl;
+// }
+

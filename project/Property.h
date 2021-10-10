@@ -23,4 +23,5 @@ class Property : public Tile
     bool getOwnershipStatus();
 
     //Run funtion
+    // void run();
 };
