@@ -23,6 +23,7 @@ TEST_SRCS=\
 	$(LIB_DIR)/Player.cpp\
 	$(LIB_DIR)/Tile.cpp\
 	$(LIB_DIR)/Property.cpp\
+	$(LIB_DIR)/dice.cpp\
 
 TEST_OBJS=$(TEST_SRCS:.cpp=.o)
 
