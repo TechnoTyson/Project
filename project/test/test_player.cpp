@@ -1,11 +1,9 @@
-#include <catch2/catch.hpp>
-#include <Player.h>
- 
+#include "catch2/catch.hpp"
+#include "../lib/Player.h"
+
 TEST_CASE("The inital position of a player is 0")
 {
-    Player beers;
-        REQUIRE
-        (
-            beers.getPosition() == 0
-        );
+    Player beers(std::string ("Tyson"));
+
+    REQUIRE (beers.getName() == "Tyson");
 }

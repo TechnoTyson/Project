@@ -1,37 +1,38 @@
-MonopolyGame: Player.o Tile.o Property.o main.o
-	clang++ Player.o Tile.o Property.o main.o -o MonopolyGame
+TEST_DIR=test
+LIB_DIR=lib
 
-main.o: main.cpp
-	clang++ -c main.cpp
+INCLUDES=\
+	-I$(LIB_DIR)\
+	-I$(TEST_DIR)\
 
-Player.o: Player.cpp
-	clang++ -c Player.cpp
+SRCS=\
+	$(LIB_DIR)/Player.cpp\
+	$(LIB_DIR)/Tile.cpp\
+	$(LIB_DIR)/Property.cpp\
+	$(LIB_DIR)/main.cpp\
+	$(LIB_DIR)/generate_board.cpp\
 
-Tile.o: Tile.cpp
-	clang++ -c Tile.cpp
+OBJS=$(SRCS:.cpp=.o)
 
-Property.o: Property.cpp
-	clang++ -c Property.cpp
+MonopolyGame: $(OBJS)
+	@clang++ $(INCLUDES) -o MonopolyGame $(OBJS)
+	@./MonopolyGame
 
-# .PHONY: deploy test clean
+TEST_SRCS=\
+	$(TEST_DIR)/test_main.cpp\
+	$(LIB_DIR)/Player.cpp\
+	$(LIB_DIR)/Tile.cpp\
+	$(LIB_DIR)/Property.cpp\
 
-# TEST_DIR=test
+TEST_OBJS=$(TEST_SRCS:.cpp=.o)
 
-# INCLUDE=\
-# 	-I$(TEST_DIR)
+test: $(TEST_OBJS)
+	@clang++ $(INCLUDES) -o run_test $(TEST_OBJS) $(TEST_SRC)
+	@./run_test
 
-# SRCS=\
-# 	$(TEST_DIR)/test_main.cpp\
-# 	$/Player.cpp
-
-# OBJS=$(SRCS:.cpp=.o)
-
-# test: $(OBJS)
-# 	@clang++ $(INCLUDES) -o run_test $(OBJS) $(TEST_SRCS)
-# 	@./run_test
-
-# %.o : %.cpp
-# 	clang++ -c $< -o $@
+%.o : %.cpp
+	clang++ -c $< -o $@
 
 clean:
-	rm *.o MonopolyGame
+	rm $(OBJS)
+	rm $(TEST_OBJS)
