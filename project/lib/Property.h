@@ -1,5 +1,7 @@
 #pragma once
 #include "Tile.h"
+#include "Player.h"
+class Player;
 
 class Property : public Tile
 {
@@ -8,7 +10,7 @@ class Property : public Tile
     std::string colour;
     int rent;
     bool ownership_status;
-
+    Player* owner;
     public:
     //Public Functions
     Property(int, std::string, int);
@@ -17,11 +19,12 @@ class Property : public Tile
     void setPrice(int);
     void setRent(int);
     void setOwnershipStatus(bool);
+    void setOwner(Player*);
     //Getters
     int getPrice();
     int getRent();
     bool getOwnershipStatus();
-
+    Player* getOwnership();
     //Run funtion
     // void run();
 };

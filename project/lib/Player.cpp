@@ -9,6 +9,10 @@ Player::Player()
 Player::Player(std::string name)
 {
     this->name = name;
+    position = 0;
+    balance = 0;
+    gaol_status = false;
+    
 }
 
 //Getters

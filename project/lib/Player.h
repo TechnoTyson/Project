@@ -1,6 +1,7 @@
 #pragma once
 #include "Property.h"
 #include "Tile.h"
+class Property;
 
 class Player
 {
@@ -10,7 +11,6 @@ class Player
     int balance;
     std::vector<Property> properties;
     bool gaol_status;
-
     public:
     //Public function
     Player(); //Default Constructor
