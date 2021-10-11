@@ -26,5 +26,5 @@ class Property : public Tile
     bool getOwnershipStatus();
     Player* getOwnership();
     //Run funtion
-    // void run();
+    void run(Player*);
 };

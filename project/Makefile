@@ -11,6 +11,7 @@ SRCS=\
 	$(LIB_DIR)/Property.cpp\
 	$(LIB_DIR)/main.cpp\
 	$(LIB_DIR)/generate_board.cpp\
+	$(LIB_DIR)/Tax.cpp\
 
 OBJS=$(SRCS:.cpp=.o)
 
@@ -24,6 +25,7 @@ TEST_SRCS=\
 	$(LIB_DIR)/Tile.cpp\
 	$(LIB_DIR)/Property.cpp\
 	$(LIB_DIR)/dice.cpp\
+	$(LIB_DIR)/Tax.cpp\
 
 TEST_OBJS=$(TEST_SRCS:.cpp=.o)
 

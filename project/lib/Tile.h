@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 #include <ctime>
+#include "Player.h"
+class Player;
 
 class Tile
 {
@@ -19,5 +21,5 @@ class Tile
     std::string getName(); //Get the name of the tile
     int getLocation(); //Get the location of the tile
 
-    //virtual void run() const = 0; //Pure virtual function to run when player lands on tile
+    virtual void run(Player *) = 0; //Pure virtual function to run when player lands on tile
 };

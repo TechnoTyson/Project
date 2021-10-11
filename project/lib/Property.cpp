@@ -48,9 +48,8 @@ Player* Property::getOwnership()
     return owner;
 }
 
-//Run function
-// void Property::run()
-// {
-//     std::cout << "You've landed on " << name << "." << std::endl;
-// }
+void Property::run(Player* player)
+{
+    std::cout << "You've landed on " << name << "." << std::endl;
+}
 
