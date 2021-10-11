@@ -1,4 +1,5 @@
 #include "Property.h"
+#include "Player.h"
 
 Property::Property(int price, std::string colour, int rent) : Tile(-1, "Default")
 {
@@ -24,6 +25,10 @@ void Property::setOwnershipStatus(bool ownership_status)
     this->ownership_status = ownership_status;
     return;
 }
+void Property::setOwner(Player* owner)
+{
+    this->owner = owner;    
+}
 
 //Getters
 int Property::getPrice()
@@ -37,6 +42,10 @@ int Property::getRent()
 bool Property::getOwnershipStatus()
 {
     return ownership_status;
+}
+Player* Property::getOwnership()
+{
+    return owner;
 }
 
 //Run function
