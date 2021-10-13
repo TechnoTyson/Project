@@ -5,22 +5,14 @@
 class Player;
 
 
-class Go: public Tile{
+class Go: public Tile
+{
 
     //Private Variables
     int fund = 200;
-
+    //Public Functions
     public:
-
+        void run(Player* player);
         Go();
-        void add_funds(Player* player);  
-
-
-
-
-
-
-
-
-
+        void add_funds(Player* player);
 };
