@@ -58,5 +58,10 @@ int main()
         board[player->getPosition()]->run(player);
     }   
     while (user_input != "END");
-
+    //Free memory
+    board.clear();
+    delete player;
+    
+    //Return 0;
+    return 0;
 }
