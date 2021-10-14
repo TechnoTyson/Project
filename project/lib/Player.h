@@ -1,7 +1,7 @@
 #pragma once
-#include "Property.h"
-#include "Tile.h"
-class Property;
+#include <string>
+// #include "Property.h"
+// class Property;
 
 class Player
 {
@@ -9,7 +9,7 @@ class Player
     int position;
     std::string name;
     int balance;
-    std::vector<Property> properties;
+    // std::vector<Property> properties;
     bool gaol_status;
     public:
     //Public function
@@ -17,7 +17,7 @@ class Player
     Player(std::string); //Constructor
 
     //Getters
-    std::vector<Property> getProperties();
+    // std::vector<Property> getProperties();
     int getPosition();
     std::string getName();
     int getBalance();
@@ -29,5 +29,5 @@ class Player
     void setPosition(int);
 
     //Add a property to player
-    void addProperty(Property);
+    // void addProperty(Property);
 };

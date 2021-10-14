@@ -1,6 +1,6 @@
 #include "Player.h"
-#include "Tile.h"
-#include "Property.h"
+// #include "Tile.h"
+// #include "Property.h"
 
 Player::Player()
 {
@@ -15,11 +15,11 @@ Player::Player(std::string name)
     
 }
 
-//Getters
-std::vector<Property> Player::getProperties()
-{
-    return properties;
-}
+// //Getters
+// std::vector<Property> Player::getProperties()
+// {
+//     return properties;
+// }
 
 int Player::getPosition()
 {
@@ -57,8 +57,8 @@ void Player::setPosition(int position)
 }
 
 //Add a property to player
-void Player::addProperty(Property newProperty)
-{
-    properties.push_back(newProperty);
-    return;
-}
+// void Player::addProperty(Property newProperty)
+// {
+//     properties.push_back(newProperty);
+//     return;
+// }

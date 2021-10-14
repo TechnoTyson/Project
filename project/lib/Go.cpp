@@ -14,3 +14,7 @@ void Go::add_funds(Player* player){
 
 
 }
+void Go::run(Player* player)
+{
+
+}

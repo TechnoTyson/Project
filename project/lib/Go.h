@@ -2,8 +2,6 @@
 
 #include "Tile.h"
 #include "Player.h"
-class Player;
-
 
 class Go: public Tile
 {
