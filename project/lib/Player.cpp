@@ -10,7 +10,7 @@ Player::Player(std::string name)
 {
     this->name = name;
     position = 0;
-    balance = 0;
+    balance = 1500;
     gaol_status = false;
     
 }
@@ -53,6 +53,7 @@ void Player::setBalance(int balance)
 }
 void Player::setPosition(int position)
 {
+    position = position % 40;
     this->position = position;
 }
 

@@ -11,12 +11,14 @@ SRCS=\
 	$(LIB_DIR)/Property.cpp\
 	$(LIB_DIR)/main.cpp\
 	$(LIB_DIR)/generate_board.cpp\
+	$(LIB_DIR)/dice.cpp\
 	$(LIB_DIR)/Tax.cpp\
 	$(LIB_DIR)/Go.cpp\
 	$(LIB_DIR)/Go_to_gaol.cpp\
 	$(LIB_DIR)/Gaol.cpp\
 	$(LIB_DIR)/Free_parking.cpp\
 	$(LIB_DIR)/Chance.cpp\
+	$(LIB_DIR)/uppercase.cpp\
 
 OBJS=$(SRCS:.cpp=.o)
 
@@ -30,6 +32,7 @@ TEST_SRCS=\
 	$(LIB_DIR)/Tile.cpp\
 	$(LIB_DIR)/Property.cpp\
 	$(LIB_DIR)/dice.cpp\
+	$(LIB_DIR)/uppercase.cpp\
 
 TEST_OBJS=$(TEST_SRCS:.cpp=.o)
 
