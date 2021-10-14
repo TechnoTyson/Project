@@ -14,3 +14,4 @@
 
 std::vector<Tile*> generate_board();
 int dice();
+std::string uppercase (std::string);
