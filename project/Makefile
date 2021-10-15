@@ -5,6 +5,9 @@ INCLUDES=\
 	-I$(LIB_DIR)\
 	-I$(TEST_DIR)\
 
+TAGS=\
+	-I$(-std=c++11)
+
 SRCS=\
 	$(LIB_DIR)/Player.cpp\
 	$(LIB_DIR)/Tile.cpp\
@@ -37,7 +40,7 @@ TEST_SRCS=\
 TEST_OBJS=$(TEST_SRCS:.cpp=.o)
 
 test: $(TEST_OBJS)
-	@clang++ $(INCLUDES) -o run_test $(TEST_OBJS) $(TEST_SRC)
+	@clang++ $(INCLUDES) $(TAGS) -o run_test $(TEST_OBJS) $(TEST_SRC)
 	@./run_test
 
 %.o : %.cpp
