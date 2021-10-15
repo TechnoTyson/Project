@@ -11,5 +11,5 @@ class Free_parking: public Tile
     //constructor
     Free_parking();
     //Run function pure virtual
-    void run(Player*);
+    void run(Player*) override;
 };

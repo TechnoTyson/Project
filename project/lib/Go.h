@@ -10,7 +10,7 @@ class Go: public Tile
     int fund = 200;
     //Public Functions
     public:
-        void run(Player* player);
+        void run(Player* player) override;
         Go();
         void add_funds(Player* player);
 };

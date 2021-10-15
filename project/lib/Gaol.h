@@ -11,5 +11,5 @@ class Gaol: public Tile
     //Constructor
     Gaol();
     //Run function pure virtual
-    void run(Player*);
+    void run(Player*) override;
 };

@@ -12,5 +12,5 @@ class Tax: public Tile
     //Constructor
     Tax(int);
     //Run function pure virtual
-    void run(Player*);
+    void run(Player*) override;
 };

@@ -11,5 +11,5 @@ class Go_to_gaol: public Tile
     //Contrustor
     Go_to_gaol();
     //Run function pure virtual
-    void run(Player*);
+    void run(Player*) override;
 };

@@ -22,4 +22,5 @@ class Tile
     int getLocation(); //Get the location of the tile
 
     virtual void run(Player *) = 0; //Pure virtual function to run when player lands on tile
+    virtual ~Tile() = 0; //Virtual dstructor
 };

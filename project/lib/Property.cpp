@@ -1,5 +1,6 @@
 #include "Property.h"
 #include "Player.h"
+#include "functions.h"
 
 Property::Property(int price, std::string colour, int rent) : Tile(-1, "Default")
 {
@@ -50,6 +51,16 @@ Player* Property::getOwnership()
 
 void Property::run(Player* player)
 {
+    //Announce what the player has landed on
     std::cout << "You've landed on " << name << "." << std::endl;
+    
+    //Check if property is owned
+    if (getOwnershipStatus() == false)
+    {
+        std::cout << "This property is currently unowned, would you like to purchase this property?" << std::endl;
+    }
+    
+    //Check if the player wants to buy the Property
+
 }
 

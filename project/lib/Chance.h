@@ -11,5 +11,5 @@ class Chance: public Tile
     //Contrustor
     Chance();
     //Run function pure virtual
-    void run(Player*);
+    void run(Player*) override;
 };
