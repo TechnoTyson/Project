@@ -27,3 +27,8 @@ int Tile::getLocation()
 {
     return location;
 }
+
+Tile::~Tile()
+{
+
+}

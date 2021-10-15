@@ -6,7 +6,7 @@ INCLUDES=\
 	-I$(TEST_DIR)\
 
 TAGS=\
-	-I$(-std=c++11)
+	$(-std=c++11)
 
 SRCS=\
 	$(LIB_DIR)/Player.cpp\
