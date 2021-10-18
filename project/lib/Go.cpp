@@ -4,17 +4,30 @@
 Go::Go() : Tile(-1, "Default")
 
 {
+    // Setting fund distribution for go to be $200
+    fund = 200;
 
 }
 
 
-void Go::add_funds(Player* player){
+void Go::pass_go(Player* player)
+{
 
     player->setBalance(player->getBalance() + fund);
 
-
+    std::cout << "You've passed go, you will recieve $200" << std::endl;
 }
+
+
 void Go::run(Player* player)
 {
+
+    
+
+    // Adding $200 into the player's account
+    player->setBalance(player->getBalance() + fund);
+
+    // Outputting text displaying to user when they landed on go
+    std::cout<< "You've landed on go, you will now recieve $200!" << std::endl;
 
 }
