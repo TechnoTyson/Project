@@ -1,6 +1,6 @@
 #pragma once
 #include "Tile.h"
-#include "Player.h"
+
 class Player;
 
 class Property : public Tile

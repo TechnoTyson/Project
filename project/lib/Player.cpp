@@ -1,6 +1,4 @@
 #include "Player.h"
-// #include "Tile.h"
-// #include "Property.h"
 
 Player::Player()
 {
@@ -12,14 +10,11 @@ Player::Player(std::string name)
     position = 0;
     balance = 1500;
     gaol_status = false;
+    properties_length = 0;
     
 }
 
-// //Getters
-// std::vector<Property> Player::getProperties()
-// {
-//     return properties;
-// }
+//Getters
 
 int Player::getPosition()
 {
@@ -58,8 +53,26 @@ void Player::setPosition(int position)
 }
 
 //Add a property to player
-// void Player::addProperty(Property newProperty)
-// {
-//     properties.push_back(newProperty);
-//     return;
-// }
+void Player::addProperty(Tile* newProperty)
+{
+    //Add the property to players array
+    properties[properties_length] = newProperty;
+    
+    //Add length to the array
+    properties_length +=1;
+    return;
+}
+
+//Print out properties
+void Player::outputProperties()
+{
+    std::cout << "You own the following properties:" << std::endl;
+    //run loop for length of properties list
+    for (int i = 0; i < properties_length; i++)
+    {
+        //Output each element
+        std::cout << properties[i]->getName() << std::endl;
+        //Wait half a second
+        std::this_thread::sleep_for(std::chrono::microseconds(500));
+    }
+}
