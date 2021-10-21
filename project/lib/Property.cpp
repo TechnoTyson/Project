@@ -96,23 +96,30 @@ void Property::run(Player* player)
         }
     }
     //If property is already owned
-    else if (getOwnershipStatus() == true)
+    else if (ownership_status == true)
     {
-        std::cout << "Looks like " << owner->getName() << " already owns this property." << std::endl;
-        std::cout << "You owe them $" << getRent() << " :(" << std::endl;
-        //Pay the rent
-        if (rent < player->getBalance())
+        //Case when property is already owned by same player
+        if (owner->getName() == player->getName())
         {
-            player->setBalance(player->getBalance()-rent);
-            std::cout << "Money successfully deducted from your account." << std::endl;
-            std::cout << "You now have $" << player->getBalance() << " in your account." << std::endl;
+            std::cout << "Looks like you already own this property, lucky there is no rent to pay" << std::endl;
         }
-        else
+        else 
         {
-            std::cout << "Insufficient funds, you have been elimenated" << std::endl;
+            std::cout << "Looks like " << owner->getName() << " already owns this property." << std::endl;
+            std::cout << "You owe them $" << getRent() << " :(" << std::endl;
+            //Pay the rent
+            if (rent < player->getBalance())
+            {
+                player->setBalance(player->getBalance()-rent);
+                std::cout << "Money successfully deducted from your account." << std::endl;
+                std::cout << "You now have $" << player->getBalance() << " in your account." << std::endl;
+            }
+            else
+            {
+                std::cout << "Insufficient funds, you have been elimenated" << std::endl;
+            }
         }
-        return;
     }
-
+    return;
 }
 
