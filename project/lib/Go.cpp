@@ -9,16 +9,17 @@ Go::Go() : Tile(-1, "Default")
 
 }
 
-
+//add funds to players balance when go is passed
 void Go::pass_go(Player* player)
 {
 
+    //Adding funds to player's balance
     player->setBalance(player->getBalance() + fund);
 
     std::cout << "You've passed go, you will recieve $200" << std::endl;
 }
 
-
+//add funds to players balance when go is landed on
 void Go::run(Player* player)
 {
 

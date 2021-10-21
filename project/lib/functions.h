@@ -12,6 +12,11 @@
 #include "Go_to_gaol.h"
 #include "Go.h"
 
+//function to generate board
 std::vector<Tile*> generate_board();
+
+//function to run dice
 int dice();
+
+//function to convert inputs to uppercase
 std::string uppercase (std::string);
