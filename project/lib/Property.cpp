@@ -83,6 +83,8 @@ void Property::run(Player* player)
                 //Change ownership status and set the owner
                 setOwnershipStatus(true);
                 setOwner(player);
+                //Add that property to the owners collection
+                player->addProperty(this);
             }
             else
             {

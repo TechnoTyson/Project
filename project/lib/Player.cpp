@@ -66,13 +66,23 @@ void Player::addProperty(Tile* newProperty)
 //Print out properties
 void Player::outputProperties()
 {
-    std::cout << "You own the following properties:" << std::endl;
-    //run loop for length of properties list
-    for (int i = 0; i < properties_length; i++)
+    //Check that the player owns some properties
+    if (properties_length != 0)
     {
-        //Output each element
-        std::cout << properties[i]->getName() << std::endl;
-        //Wait half a second
-        std::this_thread::sleep_for(std::chrono::microseconds(500));
+        std::cout << "You own the following properties:" << std::endl;
+        //run loop for length of properties list
+        for (int i = 0; i < properties_length; i++)
+        {
+            //Output each element
+            std::cout << properties[i]->getName() << std::endl;
+            //Wait half a second
+            std::this_thread::sleep_for(std::chrono::microseconds(500));
+        }
     }
+    //If player doens't own any propeties
+    else
+    {
+        std::cout << "You currently don't own any properties." << std::endl;
+    }
+    return;
 }

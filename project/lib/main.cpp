@@ -22,7 +22,8 @@ int main()
     delete username;
     
     //Let user know how to end the game
-    std::cout << "You can exit the game at anytime by entering end as an input." << std::endl << std::endl;
+    std::cout << "You can exit the game at anytime by entering end as an input." << std::endl;
+    std::cout << "Entering properties as an input will dispaly all properties you own." << std::endl << std::endl;
     //Define string for input
     std::string user_input;
     //Define int for dice roll
@@ -37,7 +38,7 @@ int main()
         //Get user input to roll the dice in while loop
         do
         {
-            std::cout << "Enter 'roll' to roll the dice:" << std::endl;
+            std::cout << "Enter 'roll' to roll the dice or 'properties' to display your owned properties." << std::endl;
             std::cin >> user_input;
             //Convert user input to capital letters
             user_input = uppercase(user_input);
@@ -50,6 +51,12 @@ int main()
                 delete player;
                 //Return to exit game
                 return 0;
+            }
+            //If user wants to output properties
+            else if (user_input == "PROPERTIES")
+            {
+                //Run function to output properties
+                player->outputProperties();
             }
         } 
         while (user_input != "ROLL");
@@ -64,14 +71,14 @@ int main()
             //board[0]->pass_go();
 
         }
-
         //Roll dice and add to players position
         player->setPosition(true_position);
 
-    
-        
         //Run the tiles function that has been landed on the board
         board[player->getPosition()]->run(player);
+
+        //Add in new line
+        std::cout << std::endl;
     }   
     while (user_input != "END");
     //Free memory
