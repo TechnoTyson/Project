@@ -7,10 +7,11 @@ class Go: public Tile
 {
 
     //Private Variables
-    int fund = 200;
+    int fund;
     //Public Functions
     public:
+        
+        void pass_go(Player* player);
         void run(Player* player) override;
         Go();
-        void add_funds(Player* player);
 };

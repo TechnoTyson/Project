@@ -2,6 +2,9 @@
 
 int main()
 {
+
+    int true_position;
+
     //Generate the board
     std::vector<Tile*> board = generate_board();
     //Welcome message to the player
@@ -51,8 +54,21 @@ int main()
         } 
         while (user_input != "ROLL");
 
+        true_position = player->getPosition()+dice();
+
+        if (true_position > 40)
+        {
+
+            Go* temp = (Go*)board[0];
+            temp->pass_go(player);
+            //board[0]->pass_go();
+
+        }
+
         //Roll dice and add to players position
-        player->setPosition(player->getPosition()+dice());
+        player->setPosition(true_position);
+
+    
         
         //Run the tiles function that has been landed on the board
         board[player->getPosition()]->run(player);
