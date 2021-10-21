@@ -1,6 +1,6 @@
 #pragma once
 #include "Tile.h"
-#include "Player.h"
+
 class Player;
 
 class Property : public Tile
@@ -24,7 +24,7 @@ class Property : public Tile
     int getPrice();
     int getRent();
     bool getOwnershipStatus();
-    Player* getOwnership();
+    Player* getOwner();
     //Run funtion
-    void run(Player*);
+    void run(Player*) override;
 };

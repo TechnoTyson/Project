@@ -3,7 +3,10 @@
 #include <string>
 #include <vector>
 #include <ctime>
+#include <chrono>
+#include <thread>
 #include "Player.h"
+
 class Player;
 
 class Tile

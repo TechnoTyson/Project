@@ -9,9 +9,9 @@ TAGS=\
 	$(-std=c++11)
 
 SRCS=\
-	$(LIB_DIR)/Player.cpp\
 	$(LIB_DIR)/Tile.cpp\
 	$(LIB_DIR)/Property.cpp\
+	$(LIB_DIR)/Player.cpp\
 	$(LIB_DIR)/main.cpp\
 	$(LIB_DIR)/generate_board.cpp\
 	$(LIB_DIR)/dice.cpp\
@@ -26,7 +26,7 @@ SRCS=\
 OBJS=$(SRCS:.cpp=.o)
 
 MonopolyGame: $(OBJS)
-	@clang++ $(INCLUDES) -o MonopolyGame $(OBJS)
+	@clang++ $(INCLUDES) $(TAGS) -o MonopolyGame $(OBJS)
 	@./MonopolyGame
 
 TEST_SRCS=\
