@@ -25,3 +25,10 @@ TEST_CASE("The position of the player passes from 44 back to 4")
 
     REQUIRE (beers.getPosition() == 4);
 }
+
+TEST_CASE("Check that each player starts with this correct balance")
+{
+    Player beers(std::string ("Declan"));
+
+    REQUIRE (beers.getBalance() == 1500);
+}
