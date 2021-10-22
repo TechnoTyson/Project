@@ -1,6 +1,12 @@
 #include "Property.h"
 #include "Player.h"
 #include "functions.h"
+#define YELLOW  "\033[33m" 
+#define RESET   "\033[0m" 
+#define GREEN   "\033[32m" 
+#define RED     "\033[31m"  
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"   
 
 Property::Property(int price, std::string colour, int rent) : Tile(-1, "Default")
 {
@@ -51,14 +57,17 @@ Player* Property::getOwner()
 
 void Property::run(Player* player)
 {
+    
     //Announce what the player has landed on
-    std::cout << "You've landed on " << name << "." << std::endl;
+    std::cout << BLUE << "Property Purchase" << RESET << std::endl;
+    std::cout << "You've landed on " << MAGENTA << name << RESET << "." << std::endl;
     
     //Check if property is owned
     if (getOwnershipStatus() == false)
     {
         //Dispaly option of buying property
-        std::cout << "This property is currently unowned, would you like to purchase this property for $" << getPrice() << "    (Y/N?)" << std::endl;
+        std::cout << "This property is currently unowned, would you like to purchase this property for " << GREEN  << "$" << getPrice() << RESET <<"    (Y/N?)" <<std::endl;
+        
         //Setup variable for input
         std::string input;
         //Check that input is valid
@@ -75,10 +84,13 @@ void Property::run(Player* player)
             //Check player can afford property
             if (price < player->getBalance())
             {
+
                 //Take money out of account and output stuff
                 player->setBalance(player->getBalance()-price);
+                std::cout << std::endl;
                 std::cout << "Money successfully deducted from your account." << std::endl;
-                std::cout << "You now have $" << player->getBalance() << " in your account." << std::endl;
+                std::cout << "You now have " << GREEN << "$" << player->getBalance() << RESET << " in your account." << std::endl;
+                std::cout << std::endl;
                 std::cout << "Congratulations, you are now the owner of " << name << "!!" << std::endl;
                 //Change ownership status and set the owner
                 setOwnershipStatus(true);
@@ -89,7 +101,7 @@ void Property::run(Player* player)
             else
             {
                 //No action as not enough funds
-                std::cout << "Insufficient funds, you can't buy this property." << std::endl;
+                std::cout << RED << "Insufficient funds, you can't buy this property." << RESET << std::endl;
             }
         }
         else if (input == "N")
@@ -103,6 +115,7 @@ void Property::run(Player* player)
         //Case when property is already owned by same player
         if (owner->getName() == player->getName())
         {
+            std::cout << BLUE << "Property Owned" << RESET << std::endl;
             std::cout << "Looks like you already own this property, lucky there is no rent to pay" << std::endl;
         }
         else 
@@ -118,7 +131,7 @@ void Property::run(Player* player)
             }
             else
             {
-                std::cout << "Insufficient funds, you have been elimenated" << std::endl;
+                std::cout << RED << "Insufficient funds, you have been elimenated" << RESET << std::endl;
             }
         }
     }

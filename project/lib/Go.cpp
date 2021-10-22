@@ -1,4 +1,7 @@
 #include "Go.h"
+#define RESET   "\033[0m"
+#define BLUE    "\033[34m" 
+#define GREEN   "\033[32m" 
 
 
 Go::Go() : Tile(-1, "Default")
@@ -29,6 +32,7 @@ void Go::run(Player* player)
     player->setBalance(player->getBalance() + fund);
 
     // Outputting text displaying to user when they landed on go
-    std::cout<< "You've landed on go, you will now recieve $200!" << std::endl;
+    std::cout << BLUE << "Landing on Go" << RESET << std::endl;
+    std::cout<< "You've landed on go, you will now recieve" << GREEN << "$200" << RESET << "!" << std::endl;
 
 }

@@ -1,5 +1,6 @@
 #include "Tile.h"
 
+//Setters
 Tile::Tile(int location, std::string name)
 {
     this->name = name;
@@ -18,6 +19,7 @@ void Tile::setLocation(int location)
     return;
 }
 
+// getters
 std::string Tile::getName()
 {
     return name;
